@@ -6,6 +6,7 @@ module.exports =
     iam_role_crn: "crn:v1:bluemix:public:iam::::serviceRole:Manager",
     iam_serviceid_crn: "crn:v1:bluemix:public:iam-identity::a/2e7cf1d7410845c99b10448e5547f683::serviceid:ServiceId-b9b1b417-8e42-4d76-8ac6-71e4eea2bbb9",
     url: "https://gateway-syd.watsonplatform.net/assistant/api",
-    version: '2018-02-16',
-    workspaceId: '747dfc55-5d1d-4d67-a9f9-9c05662b17ba'
+    version: '2018-09-19',
+    workspaceId: '747dfc55-5d1d-4d67-a9f9-9c05662b17ba',
+    assistantId: '2093e9d6-883c-4161-a799-6ea1d345f2e8',
 }
