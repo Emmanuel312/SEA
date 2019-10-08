@@ -10,5 +10,5 @@ routes.post('/start', conversationController.createSession)
 routes.use(authMiddleware)
 // rotas abaixo estao autenticadas
 routes.post('/conversation', conversationController.sendMessage)
-
+routes.post('/sendEmail', conversationController.sendEmail)
 module.exports = routes

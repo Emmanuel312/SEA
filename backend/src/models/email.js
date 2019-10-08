@@ -1,6 +1,5 @@
 const { Schema,model } = require('mongoose')
 
-
 const emailSchema = new Schema(
 {
     from:
