@@ -4,8 +4,8 @@ import Chat from './pages/chat'
 
 const root = createSwitchNavigator(
 {
-    Start,
     Chat,
+    Start,
 })
 
 export default createAppContainer(root)
