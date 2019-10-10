@@ -61,3 +61,6 @@ export const InputWrapper = styled.View`
 export const Input = styled.TextInput.attrs({placeholder:'Type your message...',placeholderTextColor: '#707070'})
 `
 `
+
+export const RecordView = styled.TouchableOpacity`
+`
