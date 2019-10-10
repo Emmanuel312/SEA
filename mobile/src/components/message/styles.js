@@ -1,13 +1,11 @@
 import styled from 'styled-components/native'
 
 export const Container = styled.View`
-    flex:1;
     margin-top: 20px;
     align-items: ${props => props.owner === 'SEA'? 'flex-start' : 'flex-end' };
 `
 
 export const Message = styled.View`
-    flex: 1;
     width: 275px;
     background-color: ${props => props.owner === 'SEA'? '#FFE7E6' : '#FFF5E2'};
     padding: 15px;

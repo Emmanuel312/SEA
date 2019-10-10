@@ -3,12 +3,14 @@ import { Container,Message,TimeView,TimeText,ContentText,ContentView } from './s
 
 export default function({ time,content,owner })
 {
-    
+    console.log(time)
+    const timeAjusted = `${time.split(':')[0]}:${time.split(':')[1]}`
+
     return (
         <Container owner={owner} >
             <Message owner={owner}>
                 <TimeView>
-                    <TimeText>{time}</TimeText>
+                    <TimeText>{timeAjusted}</TimeText>
                 </TimeView>
 
                 <ContentView>

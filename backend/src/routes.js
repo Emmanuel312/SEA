@@ -4,7 +4,7 @@ const conversationController = require('./controllers/conversationController')
 const authMiddleware = require('./middlewares/auth')
 
 
-routes.post('/start', conversationController.createSession)
+routes.get('/start', conversationController.createSession)
 
 // middleware de session
 routes.use(authMiddleware)

@@ -1,25 +1,42 @@
-import React from 'react'
-import { Container,Logo,WelcomeText,InfoText,StartButton,StartButtonText } from './styles'
+import React, { useState } from 'react'
+import { Container,Logo,WelcomeText,InfoText,StartButton,StartButtonText,Loading } from './styles'
+import AsyncStorage from '@react-native-community/async-storage'
+import api from '../../services/api'
 
 export default function start(props) {
 
-    function handleStart()
+    const [ loading,setLoading ] = useState(false)     
+
+    async function handleStart()
     {
-        console.log('foi')
-        props.navigation.navigate('Chat')
+        try
+        {
+            setLoading(true)
+            const { data } = await api.get('start')
+            setLoading(false)
+            await AsyncStorage.setItem('@token', data.token)
+            props.navigation.navigate('Chat')
+
+        }
+        catch(err)
+        {
+            console.log(err.request)
+            setLoading(false)
+        }
     }
 
     return (
         <Container>
             <Logo> 
-                <WelcomeText>Welcome to S.E.A.</WelcomeText>
+                <WelcomeText>Welcome to SEA</WelcomeText>
                 <InfoText>Sua assistente pessoal que envia email</InfoText> 
-                
             </Logo>
+            {loading? 
+                <Loading /> : 
+                <StartButton onPress={handleStart}>
+                    <StartButtonText>Start</StartButtonText>
+                </StartButton> }
 
-            <StartButton onPress={handleStart}>
-                <StartButtonText>Start</StartButtonText>
-            </StartButton>   
         </Container>
     )
 }

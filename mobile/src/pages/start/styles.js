@@ -31,10 +31,18 @@ export const StartButton = styled.TouchableOpacity`
     height: 70px;
 `
 
-
 export const StartButtonText = styled.Text`
     font-size: 24px;
     color: #D83636;
     align-self: center;
     font-weight: bold;
+`
+
+export const Loading = styled.ActivityIndicator.attrs(
+{
+    size: 30,
+    color: '#FFF5E2'
+    
+})`
+    margin-bottom: 10px;
 `

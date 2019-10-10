@@ -40,8 +40,8 @@ module.exports =
             }
             
             const watsonResponse = await assistant.message(params)
-           
-            res.status(200).json(watsonResponse.result)
+            
+            res.status(200).json({ text: watsonResponse.result.output.generic[0].text, intents: watsonResponse.result.output.intents, owner: 'SEA', time: String(new Date()).split(' ')[4], context: watsonResponse.result.context.skills['main skill'].user_defined })
         }
         catch (err)
         {
